@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KMeans Clustering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .theform {
+            margin: 2rem;
+            padding: 4rem 2rem 2rem 4rem;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theform > * {
+            margin: 1rem;
+        }
+
+        .text-glow {
+          text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
+          display: grid;
+          align-items: center;
+        }
+
+        .submit-btn {
+            background-image: linear-gradient(to right, rgb(1 134 218), rgb(182 49 167));
+            border: 0;
+            color: rgba(var(--text-color));
+            margin-top: 2rem;
+            padding: 1rem 4rem 1rem 4rem;
+            border-radius: 4rem;
+        }
+
+        .submit-btn:hover {
+            cursor: pointer;
+            color: #fafafa;
+        }
+
+        .container-outer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+
+        .container-inner {
+          text-align: center;
+        }    
+    </style>
+</head>
+<body>
+    <div class="container-outer">
+        <div class="container-inner">
+            <center><h1 class="text-glow">K Means Clustering</h1></center>
+            <div class="theform">
+                <form method="post" action="{{ url_for('result') }}" enctype="multipart/form-data">
+                    <label for="file">Upload CSV file:</label>
+                    <input type="file" name="file" id="file"><br>
+                    <label for="n_clusters">Number of clusters:</label>
+                    <input type="text" name="n_clusters" id="n_clusters"><br>
+                    <center><input type="submit" value="Submit" class="submit-btn"></center>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
